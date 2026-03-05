@@ -41,6 +41,8 @@
   "author": "Google LLC",
   "license": "BSD-3-Clause",
   "dependencies": {
+    "@lit/context": "^1.1.6",
+    "@lit/task": "^1.0.3",
     "lit": "^3.2.0"
   },
   "devDependencies": {

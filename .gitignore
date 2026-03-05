@@ -9,3 +9,10 @@ my-element.d.ts
 my-element.d.ts.map
 # only generated for size check
 my-element.bundled.js
+/dist/
+# local config with secrets
+src/config.ts
+src/config.js
+src/config.js.map
+src/config.d.ts
+src/config.d.ts.map
