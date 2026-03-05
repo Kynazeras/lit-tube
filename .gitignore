@@ -16,3 +16,4 @@ src/config.js
 src/config.js.map
 src/config.d.ts
 src/config.d.ts.map
+.DS_Store
