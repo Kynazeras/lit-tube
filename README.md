@@ -1,5 +1,9 @@
 # Lit Webcomponents Youtube search / bookmark
 
+## Starter kit disclosure
+
+This project used the official [lit-element-starter-ts](https://github.com/lit/lit-element-starter-ts#) as a jumping off point.
+
 ## How to run
 
 Install dependencies:
