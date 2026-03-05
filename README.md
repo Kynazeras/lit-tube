@@ -24,4 +24,4 @@ Run the dev server and open the project in a new browser tab:
 npm run serve
 ```
 
-You will also need to provide your own YouTube api key for the search to populate
+You will also need to provide your own YouTube api key and place it in `config.ts` for the search to populate
