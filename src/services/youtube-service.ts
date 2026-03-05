@@ -19,7 +19,6 @@ export class YoutubeService {
     }
 
     async search(query: string, sort: string): Promise<Video[]> {
-        // Cancel any previous in-flight request
         this.abort();
         this._abortController = new AbortController();
         const signal = this._abortController.signal;

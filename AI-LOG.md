@@ -48,3 +48,5 @@ From there, I used it to explain parts of Lit to me and started telling it that 
 ```
 
 This looked really bizarre to me at first so I got a chance to learn about how events propagate in Lit.
+
+Throughout the project, I used copilot to help me understand Lit from my React background and it helped a lot. It also helped me clean up my compliance features, create sanitation utils for security, and create a more responsive design.

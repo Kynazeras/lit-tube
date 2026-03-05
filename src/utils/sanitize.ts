@@ -13,7 +13,6 @@ export function sanitizeUrl(url: string): string {
 
 export function sanitizeVideoId(id: string): string {
     if (!id || typeof id !== 'string') return '';
-    // YouTube video IDs: alphanumeric, hyphens, underscores, typically 11 chars
     return /^[a-zA-Z0-9_-]{1,20}$/.test(id) ? id : '';
 }
 

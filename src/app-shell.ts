@@ -47,7 +47,6 @@ export class AppShell extends LitElement {
             const results = await this._youtubeService.search(query, sort);
             this.searchState = {...this.searchState, results, loading: false};
         } catch (error: unknown) {
-            // Silently ignore aborted requests — a newer search replaced this one
             if (error instanceof DOMException && error.name === 'AbortError') {
                 return;
             }
@@ -165,7 +164,6 @@ export class AppShell extends LitElement {
 
     private _switchTab(tab: 'search' | 'bookmarks') {
         this._activeTab = tab;
-        // Move focus to the newly active tab panel after render
         this.updateComplete.then(() => {
             const main = this.shadowRoot?.getElementById('main-content');
             main?.focus();
@@ -202,7 +200,6 @@ export class AppShell extends LitElement {
     }
 
     private _onSearchSubmit(e: CustomEvent<{query: string; sort: string}>) {
-        // Debounce rapid submissions to avoid concurrent YouTube API requests
         if (this._searchDebounceTimer) {
             clearTimeout(this._searchDebounceTimer);
         }
