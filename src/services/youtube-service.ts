@@ -2,6 +2,21 @@ import {YOUTUBE_API_KEY} from '../config';
 import {Video} from '../types/video';
 import {sanitizeUrl, sanitizeVideoId, stripHtmlTags} from '../utils/sanitize';
 
+interface YouTubeSearchItem {
+    id: {videoId: string};
+    snippet: {
+        title: string;
+        description: string;
+        thumbnails: {medium: {url: string}};
+        publishedAt: string;
+    };
+}
+
+interface YouTubeVideoItem {
+    id: string;
+    statistics: {commentCount: number};
+}
+
 const API_KEY = YOUTUBE_API_KEY;
 
 export class YoutubeService {
@@ -33,7 +48,7 @@ export class YoutubeService {
             throw new Error('Failed to fetch videos');
         }
         const data = await response.json();
-        const videos: Video[] = data.items.map((item: any) => ({
+        const videos: Video[] = data.items.map((item: YouTubeSearchItem) => ({
             videoId: sanitizeVideoId(item.id.videoId),
             title: stripHtmlTags(item.snippet.title),
             description: stripHtmlTags(item.snippet.description),
@@ -66,7 +81,7 @@ export class YoutubeService {
         }
         const data = await response.json();
         const comments: {[videoId: string]: number} = {};
-        data.items.forEach((item: any) => {
+        data.items.forEach((item: YouTubeVideoItem) => {
             comments[item.id] = item.statistics.commentCount;
         });
         return comments;
