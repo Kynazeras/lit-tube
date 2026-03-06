@@ -115,7 +115,7 @@ export class AppShell extends LitElement {
                 >Skip to main content</a
             >
             <header>
-                <h1>YouTube Browser</h1>
+                <h1>LitTube</h1>
             </header>
             <nav role="tablist" aria-label="Main navigation">
                 <button
