@@ -2,6 +2,7 @@
 /lib/
 /test/
 custom-elements.json
+/.vscode/
 # top level source
 my-element.js
 my-element.js.map
