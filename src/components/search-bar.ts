@@ -102,9 +102,8 @@ export class SearchBar extends LitElement {
                         aria-label="Sort results by"
                     >
                         <option value="relevance">Relevance</option>
-                        <option value="date">Upload Date</option>
-                        <option value="viewCount">View Count</option>
-                        <option value="rating">Rating</option>
+                        <option value="date">Newest First</option>
+                        <option value="rating">Highest Rating</option>
                     </select>
                 </div>
                 <button type="submit">Search</button>
